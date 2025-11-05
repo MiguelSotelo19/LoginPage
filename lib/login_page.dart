@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_firebase_1/register_page.dart';
 import 'validators.dart';
 import 'auth_errors.dart';
 
@@ -112,6 +113,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 8),
                 const _SmallPrint(),
+                TextButton(
+                  onPressed: _loading ? null : () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const RegisterPage()),
+                    );
+                  },
+                  child: const Text('¿No tienes cuenta? Regístrate'),
+                ),
               ]),
             ),
           ),
